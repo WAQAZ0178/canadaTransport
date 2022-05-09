@@ -4,13 +4,10 @@ const APPICONS_DIR = '../../../assets/icons/';
 
 const appImages = {
   users: require(IMAGE_DIR + 'users.png'),
-  home: require(IMAGE_DIR + 'home.png'),
-  search: require(IMAGE_DIR + 'search.png'),
-  addBtn: require(IMAGE_DIR + 'addBtn.png'),
-  notification: require(IMAGE_DIR + 'notification.png'),
-  profile: require(IMAGE_DIR + 'profile.png'),
-  menu: require(IMAGE_DIR + 'menu.png'),
-  menuWhite: require(IMAGE_DIR + 'menuWhite.png'),
+  arrowback: require(IMAGE_DIR + 'arrowback.png'),
+  fb: require(IMAGE_DIR + 'fb.png'),
+  logo: require(IMAGE_DIR + 'logo.png'),
+  google: require(IMAGE_DIR + 'google.png'),
   user1: {uri: 'https://randomuser.me/api/portraits/women/44.jpg'},
   user2: {uri: 'https://randomuser.me/api/portraits/women/72.jpg'},
   user3: {uri: 'https://randomuser.me/api/portraits/women/39.jpg'},

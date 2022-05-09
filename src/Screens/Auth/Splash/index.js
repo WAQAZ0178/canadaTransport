@@ -6,9 +6,16 @@ import {styles} from './style';
 const Splash = props => {
   const [email, setEmail] = useState('');
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+    <View
+      style={{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'red',
+      }}>
       {/* <TextInput />
       <MyButton title={'login'} /> */}
+      <Text>Chika boom</Text>
     </View>
   );
 };
