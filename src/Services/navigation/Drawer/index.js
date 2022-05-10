@@ -12,6 +12,7 @@ import {
   responsiveWidth,
   responsiveFontSize,
 } from 'react-native-responsive-dimensions';
+import {appImages, colors, fontFamily} from '../../utilities';
 // import {appImages} from '../../globals/utilities/assets';
 // import {colors} from '../../globals/utilities/colors';
 // import {fontFamily} from '../../globals/utilities/fonts';
@@ -22,38 +23,38 @@ import {
 const CustomDrawer = props => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity
-        onPress={() => {
-          //   props.navigation.navigate('Profile');
-        }}>
-        {/* <Image source={{uri: data.profilePicture}} style={styles.picture} /> */}
+      <View style={styles.drawerHeader}>
+        <TouchableOpacity>
+          <Image source={appImages.profile} style={styles.picture} />
+        </TouchableOpacity>
+        <View>
+          <Text style={styles.name}>{`Jhon Smith`}</Text>
+          <Text style={styles.email}>{`jhonsmith@gmail.com`}</Text>
+        </View>
+      </View>
+      <TouchableOpacity style={styles.Buttons}>
+        <Image source={appImages.d1} style={styles.icons} />
+        <Text style={styles.ButtonsText}>Testimonial of sea service</Text>
       </TouchableOpacity>
-      <Text style={styles.name}>{`name`}</Text>
-      <Text style={styles.email}>{`${email}`}</Text>
-      <TouchableOpacity
-        onPress={() => {
-          //   props.navigation.navigate('Rekit', {
-          //     item: data.type === 'OFFER A SERVICE AS' ? data : [],
-          //     type: data.type,
-          //   });
-        }}>
-        <Text style={styles.Buttons}>My Kits</Text>
+      <TouchableOpacity style={styles.Buttons}>
+        <Image source={appImages.d2} style={styles.icons} />
+        <Text style={styles.ButtonsText}>Statement of sea service</Text>
       </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() => {
-          //   props.navigation.navigate('MyAnnoucement');
-        }}>
-        <Text style={styles.Buttons}>My Annoucements</Text>
+      <TouchableOpacity style={styles.Buttons}>
+        <Image source={appImages.d3} style={styles.icons} />
+        <Text style={styles.ButtonsText}>Steering Testimonial</Text>
       </TouchableOpacity>
-      <View style={{height: responsiveHeight(30)}} />
-      <TouchableOpacity
-        onPress={async () => {
-          //   await logout().then(async () => {
-          //     await AsyncStorage.clear();
-          //     props.navigation.navigate('Login');
-          //   });
-        }}>
-        <Text style={styles.ButtonLogout}>Logout</Text>
+      <TouchableOpacity style={styles.Buttons}>
+        <Image source={appImages.d4} style={styles.icons} />
+        <Text style={styles.ButtonsText}>Application for Certificate</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.Buttons}>
+        <Image source={appImages.d5} style={styles.icons} />
+        <Text style={styles.ButtonsText}>Settings</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.Buttons}>
+        <Image source={appImages.d6} style={styles.icons} />
+        <Text style={styles.ButtonsText}>Logout</Text>
       </TouchableOpacity>
     </View>
   );
@@ -62,42 +63,50 @@ const CustomDrawer = props => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: 'white',
   },
   name: {
     color: 'white',
-    marginTop: responsiveHeight(2.5),
-    fontSize: responsiveFontSize(2.8),
-    textAlign: 'center',
-    // fontFamily: fontFamily.PoppinsSemiBold,
+    fontSize: responsiveFontSize(1.8),
+    fontFamily: fontFamily.semiBold,
   },
   email: {
     color: 'white',
-    marginTop: responsiveHeight(1),
-    fontSize: responsiveFontSize(2),
-    textAlign: 'center',
-    // fontFamily: fontFamily.PoppinsMedium,
-    marginBottom: responsiveHeight(4),
+    fontSize: responsiveFontSize(1.5),
+    fontFamily: fontFamily.regular,
   },
   picture: {
-    height: responsiveHeight(14),
-    width: responsiveWidth(28),
-    borderRadius: responsiveWidth(14),
-    alignSelf: 'center',
-    marginTop: responsiveHeight(8),
+    height: responsiveHeight(7),
+    width: responsiveWidth(14),
+    borderRadius: responsiveWidth(7),
+    resizeMode: 'contain',
+    marginRight: responsiveWidth(3),
+  },
+  ButtonsText: {
+    color: colors.greyText,
+    fontFamily: fontFamily.bold,
+    fontSize: responsiveFontSize(1.8),
+    marginLeft: responsiveWidth(3),
+  },
+
+  drawerHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: colors.royalBlue,
+    paddingTop: responsiveHeight(5),
+    paddingBottom: responsiveHeight(2),
+    paddingHorizontal: responsiveWidth(2),
+  },
+  icons: {
+    height: responsiveFontSize(3),
+    width: responsiveFontSize(3),
+    resizeMode: 'contain',
+    marginLeft: responsiveWidth(5),
   },
   Buttons: {
-    color: 'white',
-    marginLeft: responsiveWidth(5),
-    // fontFamily: fontFamily.PoppinsMedium,
-    fontSize: responsiveFontSize(2.5),
-    marginTop: responsiveHeight(4),
-  },
-  ButtonLogout: {
-    color: 'white',
-    marginLeft: responsiveWidth(5),
-    // fontFamily: fontFamily.PoppinsSemiBold,
-    fontSize: responsiveFontSize(2.5),
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: responsiveHeight(3),
   },
 });
 export default CustomDrawer;

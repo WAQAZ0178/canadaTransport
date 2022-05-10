@@ -22,12 +22,12 @@ const Signup = props => {
     <View style={styles.container}>
       <StatusBar
         barStyle="dark-content"
-        backgroundColor={'#F03F35'}
+        backgroundColor={colors.royalBlue}
         translucent={false}
       />
       <View
         style={{
-          backgroundColor: '#F03F35',
+          backgroundColor: colors.royalBlue,
           width: responsiveWidth(100),
           paddingHorizontal: responsiveWidth(5),
           flexDirection: 'row',
@@ -68,7 +68,7 @@ const Signup = props => {
       />
       <Text
         style={{
-          color: '#F03F35',
+          color: colors.royalBlue,
           fontSize: responsiveFontSize(1.9),
           fontFamily: fontFamily.bold,
           marginLeft: responsiveWidth(8),
@@ -92,7 +92,7 @@ const Signup = props => {
       </View>
       <Text
         style={{
-          color: '#F03F35',
+          color: colors.royalBlue,
           fontSize: responsiveFontSize(1.9),
           fontFamily: fontFamily.bold,
           marginLeft: responsiveWidth(8),
@@ -117,7 +117,7 @@ const Signup = props => {
       </View>
       <Text
         style={{
-          color: '#F03F35',
+          color: colors.royalBlue,
           fontSize: responsiveFontSize(1.9),
           fontFamily: fontFamily.bold,
           marginLeft: responsiveWidth(8),
@@ -150,31 +150,28 @@ const Signup = props => {
         }}>
         <TouchableOpacity
           style={{
-            backgroundColor: colors.inputs,
-            height: responsiveWidth(6),
-            width: responsiveWidth(6),
+            backgroundColor: colors.lightsilver,
+            height: responsiveWidth(5),
+            width: responsiveWidth(5),
           }}
         />
         <Text
           style={{
-            color: colors.lighttexts,
+            color: colors.greyText,
             textAlign: 'justify',
             marginLeft: responsiveWidth(3),
             fontSize: responsiveFontSize(1.5),
             fontFamily: fontFamily.medium,
           }}>
           By creating an account, you agree to our{' '}
-          <Text style={{color: colors.red}}>Terms and Conditions</Text> and
-          acknowledge our{' '}
-          <Text style={{color: colors.red}}>Privacy Policy.</Text>
+          <Text style={{color: colors.royalBlue}}>Terms and Conditions</Text>{' '}
+          and acknowledge our{' '}
+          <Text style={{color: colors.royalBlue}}>Privacy Policy.</Text>
         </Text>
       </View>
       <TouchableOpacity
-        onPress={() => {
-          props.navigation.navigate('Login');
-        }}
         style={{
-          backgroundColor: '#F03F35',
+          backgroundColor: colors.royalBlue,
           height: responsiveHeight(7),
           width: responsiveWidth(50),
           alignItems: 'center',
@@ -192,7 +189,7 @@ const Signup = props => {
           REGISTER
         </Text>
       </TouchableOpacity>
-      <View
+      {/* <View
         style={{
           width: responsiveWidth(30),
           alignSelf: 'center',
@@ -236,7 +233,7 @@ const Signup = props => {
             }}
           />
         </TouchableOpacity>
-      </View>
+      </View> */}
       <Text
         style={{
           color: 'gray',
@@ -244,7 +241,14 @@ const Signup = props => {
           alignSelf: 'center',
           fontFamily: fontFamily.medium,
         }}>
-        Already have an account? <Text style={{color: colors.red}}>Login</Text>
+        Already have an account?{' '}
+        <Text
+          onPress={() => {
+            props.navigation.navigate('Login');
+          }}
+          style={{color: colors.royalBlue}}>
+          Login
+        </Text>
       </Text>
     </View>
   );

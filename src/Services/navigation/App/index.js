@@ -335,13 +335,17 @@ const App = () => {
   return (
     <Drawer.Navigator
       screenOptions={{
+        headerShown: false,
+
         drawerStyle: {
           backgroundColor: '#c6cbef',
-          width: 380,
+          //   width: 380,
         },
       }}
       drawerContent={props => <CustomeDrawar {...props} />}
-      initialRouteName="Home"></Drawer.Navigator>
+      initialRouteName="Home">
+      <Drawer.Screen name={'Home'} component={Home} />
+    </Drawer.Navigator>
   );
 };
 

@@ -22,12 +22,12 @@ const Login = props => {
     <View style={styles.container}>
       <StatusBar
         barStyle="dark-content"
-        backgroundColor={'#F03F35'}
+        backgroundColor={colors.royalBlue}
         translucent={false}
       />
       <View
         style={{
-          backgroundColor: '#F03F35',
+          backgroundColor: colors.royalBlue,
           width: responsiveWidth(100),
           paddingHorizontal: responsiveWidth(5),
           flexDirection: 'row',
@@ -68,7 +68,7 @@ const Login = props => {
       />
       <Text
         style={{
-          color: '#F03F35',
+          color: colors.royalBlue,
           fontSize: responsiveFontSize(1.9),
           fontFamily: fontFamily.bold,
           marginLeft: responsiveWidth(8),
@@ -92,7 +92,7 @@ const Login = props => {
       </View>
       <Text
         style={{
-          color: '#F03F35',
+          color: colors.royalBlue,
           fontSize: responsiveFontSize(1.9),
           fontFamily: fontFamily.bold,
           marginLeft: responsiveWidth(8),
@@ -126,10 +126,10 @@ const Login = props => {
       </Text>
       <TouchableOpacity
         onPress={() => {
-          props.navigation.navigate('Signup');
+          props.navigation.navigate('App');
         }}
         style={{
-          backgroundColor: '#F03F35',
+          backgroundColor: colors.royalBlue,
           height: responsiveHeight(7),
           width: responsiveWidth(50),
           alignItems: 'center',
@@ -147,7 +147,7 @@ const Login = props => {
           LOGIN
         </Text>
       </TouchableOpacity>
-      <View
+      {/* <View
         style={{
           width: responsiveWidth(30),
           alignSelf: 'center',
@@ -191,7 +191,7 @@ const Login = props => {
             }}
           />
         </TouchableOpacity>
-      </View>
+      </View> */}
       <Text
         style={{
           color: 'gray',
@@ -199,7 +199,14 @@ const Login = props => {
           alignSelf: 'center',
           fontFamily: fontFamily.medium,
         }}>
-        Don’t have an account? <Text style={{color: colors.red}}>Register</Text>
+        Don’t have an account?{' '}
+        <Text
+          style={{color: colors.royalBlue}}
+          onPress={() => {
+            props.navigation.navigate('Signup');
+          }}>
+          Register
+        </Text>
       </Text>
     </View>
   );

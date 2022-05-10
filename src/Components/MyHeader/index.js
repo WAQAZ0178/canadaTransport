@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, TouchableOpacity, Text, Image} from 'react-native';
+import {View, TouchableOpacity, StatusBar, Image, Text} from 'react-native';
 import {
   responsiveHeight,
   responsiveWidth,
@@ -11,10 +11,15 @@ import {appImages} from '../../Services/utilities';
 import {useNavigation} from '@react-navigation/native';
 
 export const MyHeader = props => {
-  const {title} = props;
+  const {title, subtitle} = props;
   const navigation = useNavigation();
   return (
     <View>
+      <StatusBar
+        backgroundColor={'transparent'}
+        barStyle={'dark-content'}
+        translucent={true}
+      />
       <View
         style={{
           flexDirection: 'row',
@@ -23,10 +28,14 @@ export const MyHeader = props => {
           width: responsiveWidth(90),
           alignSelf: 'center',
           marginBottom: responsiveHeight(1),
+          paddingTop: responsiveHeight(3),
         }}>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.openDrawer();
+          }}>
           <Image
-            source={appImages.menu}
+            source={appImages.h1}
             style={{
               height: responsiveFontSize(3),
               width: responsiveFontSize(3),
@@ -34,23 +43,43 @@ export const MyHeader = props => {
             }}
           />
         </TouchableOpacity>
-        <Text
+        <Image
+          source={appImages.logo}
           style={{
-            color: colors.black,
-            fontSize: responsiveFontSize(2),
-            fontFamily: fontFamily.HelveticaBold,
-          }}>
-          {title}
-        </Text>
+            height: responsiveHeight(8),
+            width: responsiveWidth(16),
+            resizeMode: 'contain',
+          }}
+        />
         <TouchableOpacity>
-          <Icon
-            name={'chevron-up'}
-            type={'feather'}
-            size={responsiveFontSize(4)}
-            color={colors.black}
+          <Image
+            source={appImages.h2}
+            style={{
+              height: responsiveFontSize(3),
+              width: responsiveFontSize(3),
+              resizeMode: 'contain',
+            }}
           />
         </TouchableOpacity>
       </View>
+      <Text
+        style={{
+          color: colors.royalBlue,
+          fontFamily: fontFamily.bold,
+          fontSize: responsiveFontSize(1.8),
+          alignSelf: 'center',
+        }}>
+        {title}
+      </Text>
+      <Text
+        style={{
+          color: colors.royalBlue,
+          fontFamily: fontFamily.bold,
+          fontSize: responsiveFontSize(1.8),
+          alignSelf: 'center',
+        }}>
+        {subtitle}
+      </Text>
     </View>
   );
 };

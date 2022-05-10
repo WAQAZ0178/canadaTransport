@@ -14,7 +14,7 @@ import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
-import {fontFamily} from '../../../Services/utilities';
+import {colors, fontFamily} from '../../../Services/utilities';
 // import {MyButton} from '../../../Components';
 const Splash = props => {
   const [email, setEmail] = useState('');
@@ -24,11 +24,11 @@ const Splash = props => {
       <Image
         source={appImages.logo}
         style={{
-          height: responsiveHeight(15),
+          height: responsiveHeight(28),
           width: responsiveWidth(90),
           resizeMode: 'contain',
           alignSelf: 'center',
-          marginTop: responsiveHeight(40),
+          marginTop: responsiveHeight(35),
         }}
       />
       <TouchableOpacity
@@ -36,7 +36,7 @@ const Splash = props => {
           props.navigation.navigate('Login');
         }}
         style={{
-          backgroundColor: '#F03F35',
+          backgroundColor: colors.royalBlue,
           height: responsiveHeight(6),
           width: responsiveWidth(45),
           alignItems: 'center',
