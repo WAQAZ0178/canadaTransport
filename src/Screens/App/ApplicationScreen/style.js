@@ -81,7 +81,7 @@ export const styles = StyleSheet.create({
     fontFamily: fontFamily.semiBold,
     fontSize: responsiveFontSize(1.4),
     marginLeft: responsiveWidth(1),
-    width: responsiveWidth(40),
+    // width: responsiveWidth(40),
     marginRight: responsiveWidth(5),
   },
   inputs: {
@@ -125,5 +125,16 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginVertical: responsiveHeight(1),
+  },
+  bottmTwext: {
+    width: responsiveWidth(26),
+    color: colors.black,
+    textAlign: 'center',
+    fontFamily: fontFamily.bold,
+    fontSize: responsiveFontSize(1.3),
+    borderTopWidth: responsiveWidth(0.3),
+    borderColor: colors.lightsilver,
+    paddingTop: responsiveHeight(1.5),
+    marginVertical: responsiveHeight(2.5),
   },
 });

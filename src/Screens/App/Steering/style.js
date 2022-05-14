@@ -85,7 +85,7 @@ export const styles = StyleSheet.create({
     marginRight: responsiveWidth(5),
   },
   inputs: {
-    color: colors.royalBlue,
+    color: colors.black,
     fontFamily: fontFamily.bold,
     fontSize: responsiveFontSize(1.45),
     padding: 0,
@@ -93,7 +93,7 @@ export const styles = StyleSheet.create({
     marginVertical: responsiveHeight(1),
   },
   input1: {
-    color: colors.royalBlue,
+    color: colors.black,
     fontFamily: fontFamily.bold,
     fontSize: responsiveFontSize(1.45),
     padding: 0,

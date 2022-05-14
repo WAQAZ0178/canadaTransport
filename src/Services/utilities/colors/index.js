@@ -1,6 +1,4 @@
 export const colors = {
-  // pink: '#FBDCCE',
-  // lightpink: '#FFF5F0',
   black: '#000',
   white: '#fff',
   lighttexts: '#CECECE',
@@ -8,11 +6,8 @@ export const colors = {
   inputs: '#F6F6F6',
   blue: '#3A58BA',
   royalBlue: '#0E75BA',
-  // lightbluebackground: '#F9F9F9',
-  // blue: '#75C9CC',
-  // cardblue: '#afdfdb',
   lightsilver: '#DADADA',
-  // lightgreen: '#708a8e',
   greyText: '#535763B2',
-  // newPinklight: '#ffb6c1',
+  green: '#1FAB5C',
+  purple: '#9446CE',
 };

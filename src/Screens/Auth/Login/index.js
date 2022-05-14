@@ -87,7 +87,12 @@ const Login = props => {
         }}>
         <TextInput
           placeholder="Email Address"
-          style={{padding: 0, margin: 0, fontFamily: fontFamily.semiBold}}
+          style={{
+            padding: 0,
+            margin: 0,
+            fontFamily: fontFamily.semiBold,
+            color: colors.black,
+          }}
         />
       </View>
       <Text
@@ -112,7 +117,12 @@ const Login = props => {
         }}>
         <TextInput
           placeholder="Password"
-          style={{padding: 0, margin: 0, fontFamily: fontFamily.semiBold}}
+          style={{
+            padding: 0,
+            margin: 0,
+            fontFamily: fontFamily.semiBold,
+            color: colors.black,
+          }}
         />
       </View>
       <Text

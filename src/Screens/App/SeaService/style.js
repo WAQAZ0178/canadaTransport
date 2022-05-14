@@ -71,6 +71,21 @@ export const styles = StyleSheet.create({
     fontFamily: fontFamily.bold,
     fontSize: responsiveFontSize(1.4),
   },
+  headings1: {
+    color: colors.black,
+    fontFamily: fontFamily.bold,
+    fontSize: responsiveFontSize(1.2),
+    textAlign: 'center',
+    width: responsiveWidth(26),
+  },
+  headings2: {
+    color: colors.greyText,
+    fontFamily: fontFamily.bold,
+    fontSize: responsiveFontSize(1.2),
+    textAlign: 'center',
+    width: responsiveWidth(26),
+    marginVertical: responsiveHeight(1),
+  },
   labels: {
     color: colors.black,
     fontFamily: fontFamily.semiBold,
@@ -85,7 +100,7 @@ export const styles = StyleSheet.create({
     marginRight: responsiveWidth(5),
   },
   inputs: {
-    color: colors.royalBlue,
+    color: colors.black,
     fontFamily: fontFamily.bold,
     fontSize: responsiveFontSize(1.45),
     padding: 0,

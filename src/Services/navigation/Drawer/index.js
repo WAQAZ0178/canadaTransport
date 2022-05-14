@@ -32,23 +32,43 @@ const CustomDrawer = props => {
           <Text style={styles.email}>{`jhonsmith@gmail.com`}</Text>
         </View>
       </View>
-      <TouchableOpacity style={styles.Buttons}>
+      <TouchableOpacity
+        style={styles.Buttons}
+        onPress={() => {
+          props.navigation.navigate('Home');
+        }}>
         <Image source={appImages.d1} style={styles.icons} />
         <Text style={styles.ButtonsText}>Testimonial of sea service</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.Buttons}>
+      <TouchableOpacity
+        style={styles.Buttons}
+        onPress={() => {
+          props.navigation.navigate('SeaService');
+        }}>
         <Image source={appImages.d2} style={styles.icons} />
         <Text style={styles.ButtonsText}>Statement of sea service</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.Buttons}>
+      <TouchableOpacity
+        style={styles.Buttons}
+        onPress={() => {
+          props.navigation.navigate('Steering');
+        }}>
         <Image source={appImages.d3} style={styles.icons} />
         <Text style={styles.ButtonsText}>Steering Testimonial</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.Buttons}>
+      <TouchableOpacity
+        style={styles.Buttons}
+        onPress={() => {
+          props.navigation.navigate('ApplicationScreen');
+        }}>
         <Image source={appImages.d4} style={styles.icons} />
         <Text style={styles.ButtonsText}>Application for Certificate</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.Buttons}>
+      <TouchableOpacity
+        style={styles.Buttons}
+        onPress={() => {
+          props.navigation.navigate('FarmD2');
+        }}>
         <Image source={appImages.d5} style={styles.icons} />
         <Text style={styles.ButtonsText}>Settings</Text>
       </TouchableOpacity>

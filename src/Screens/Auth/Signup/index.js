@@ -15,9 +15,10 @@ import {
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 import {colors, fontFamily} from '../../../Services/utilities';
+import {Icon} from 'react-native-elements';
 // import {MyButton} from '../../../Components';
 const Signup = props => {
-  const [email, setEmail] = useState('');
+  const [check, setCheck] = useState(false);
   return (
     <View style={styles.container}>
       <StatusBar
@@ -148,13 +149,31 @@ const Signup = props => {
           alignItems: 'center',
           marginTop: responsiveHeight(2),
         }}>
-        <TouchableOpacity
-          style={{
-            backgroundColor: colors.lightsilver,
-            height: responsiveWidth(5),
-            width: responsiveWidth(5),
-          }}
-        />
+        {check ? (
+          <TouchableOpacity
+            onPress={() => setCheck(!check)}
+            style={{
+              backgroundColor: colors.royalBlue,
+              height: responsiveWidth(5),
+              width: responsiveWidth(5),
+            }}>
+            <Icon
+              name="check"
+              type={'antdesign'}
+              color={colors.white}
+              size={responsiveFontSize(2.5)}
+            />
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity
+            onPress={() => setCheck(!check)}
+            style={{
+              backgroundColor: colors.lightsilver,
+              height: responsiveWidth(5),
+              width: responsiveWidth(5),
+            }}
+          />
+        )}
         <Text
           style={{
             color: colors.greyText,
