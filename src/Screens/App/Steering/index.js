@@ -16,7 +16,11 @@ import {
 } from 'react-native-responsive-dimensions';
 import {Icon} from 'react-native-elements';
 import {colors, fontFamily} from '../../../Services';
-import {DateSelect, DateSelect1} from '../../../Components/dateTimePicker';
+import {
+  DateSelect,
+  DateSelect1,
+  DateSelect2,
+} from '../../../Components/dateTimePicker';
 const Steering = props => {
   const [check, setCheck] = useState(false);
   const [date, setDate] = useState('26-03-22');
@@ -191,12 +195,17 @@ const Steering = props => {
         </Text>
         <View
           style={{
-            height: responsiveWidth(0.3),
-            backgroundColor: colors.lightsilver,
-            width: responsiveWidth(35),
-            marginTop: responsiveHeight(6),
-          }}
-        />
+            // marginLeft: responsiveWidth(7),
+            marginTop: responsiveHeight(4),
+          }}>
+          <DateSelect2
+            getDate={date => {
+              setDate(date);
+            }}
+            value={date}
+            datePickerStyle={{width: responsiveWidth(35)}}
+          />
+        </View>
       </View>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <View
@@ -228,7 +237,12 @@ const Steering = props => {
           </Text>
         </View>
       </View>
-      <MyFooter title={'82-0546E (1803-07)'} />
+      <MyFooter
+        title={'82-0546E (1803-07)'}
+        continuePress={() => {
+          props.navigation.navigate('ApplicationScreen');
+        }}
+      />
     </ScrollView>
   );
 };

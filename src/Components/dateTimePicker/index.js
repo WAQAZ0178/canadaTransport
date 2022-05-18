@@ -31,8 +31,8 @@ const DateSelect = props => {
   };
 
   const handleConfirm = date => {
-    setDate(moment(date).format('DD-MM_YY'));
-    props.getDate(moment(date).format('DD-MM_YY'));
+    setDate(moment(date).format('DD-MM-YY'));
+    props.getDate(moment(date).format('DD-MM-YY'));
     hideDatePicker();
   };
 
@@ -128,8 +128,8 @@ const DateSelect1 = props => {
   };
 
   const handleConfirm = date => {
-    setDate(moment(date).format('DD-MM_YY'));
-    props.getDate(moment(date).format('DD-MM_YY'));
+    setDate(moment(date).format('DD-MM-YY'));
+    props.getDate(moment(date).format('DD-MM-YY'));
     hideDatePicker();
   };
 
@@ -164,6 +164,69 @@ const DateSelect1 = props => {
           {value}
         </Text>
       </View>
+      <DateTimePickerModal
+        isVisible={props.isVisible || isDatePickerVisible}
+        mode="date"
+        date={new Date()}
+        value={value}
+        onConfirm={handleConfirm}
+        onCancel={hideDatePicker}
+        pickerContainerStyleIOS={{}}
+        display={Platform.OS === 'ios' ? 'inline' : 'spinner'}
+        ref={props.ref}
+        minimumDate={minimumDate}
+      />
+    </TouchableOpacity>
+  );
+};
+const DateSelect2 = props => {
+  const {minimumDate, value, datePickerStyle} = props;
+  const [isDatePickerVisible, setDatePickerVisibility] = useState(
+    props.isVisible || false,
+  );
+  const [date, setDate] = useState('');
+  useEffect(() => {
+    setDate(props.initialDate);
+  }, [props]);
+  const showDatePicker = () => {
+    setDatePickerVisibility(true);
+  };
+
+  const hideDatePicker = () => {
+    setDatePickerVisibility(false);
+  };
+
+  const handleConfirm = date => {
+    setDate(moment(date).format('DD-MM-YY'));
+    props.getDate(moment(date).format('DD-MM-YY'));
+    hideDatePicker();
+  };
+
+  return (
+    <TouchableOpacity activeOpacity={0.7} style={{}} onPress={showDatePicker}>
+      {/* <FloatingLabelInput
+        label={label}
+        editable={false}
+        value={value}
+        onChangeText={onChangeText}
+      /> */}
+
+      <Text
+        style={[
+          {
+            color: colors.greyText,
+            fontSize: responsiveFontSize(1.3),
+            fontFamily: fontFamily.semiBold,
+            marginLeft: responsiveWidth(0.5),
+            width: responsiveWidth(30),
+            borderBottomWidth: responsiveWidth(0.3),
+            borderColor: colors.lighttexts,
+            textAlign: 'center',
+          },
+          datePickerStyle,
+        ]}>
+        {value}
+      </Text>
       <DateTimePickerModal
         isVisible={props.isVisible || isDatePickerVisible}
         mode="date"
@@ -222,4 +285,4 @@ const TimeSelect = props => {
   );
 };
 
-export {DateSelect, DateSelect1, TimeSelect};
+export {DateSelect, DateSelect1, TimeSelect, DateSelect2};

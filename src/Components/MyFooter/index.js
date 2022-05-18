@@ -11,7 +11,7 @@ import {appImages} from '../../Services/utilities';
 import {useNavigation} from '@react-navigation/native';
 
 export const MyFooter = props => {
-  const {title, subtitle, text} = props;
+  const {title, subtitle, text, continuePress} = props;
   const navigation = useNavigation();
   return (
     <View>
@@ -138,6 +138,7 @@ export const MyFooter = props => {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
+          onPress={continuePress}
           style={{
             width: responsiveWidth(22),
             marginRight: responsiveWidth(2),

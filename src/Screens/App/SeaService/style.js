@@ -141,4 +141,18 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginVertical: responsiveHeight(1),
   },
+  inputss: {
+    color: colors.royalBlue,
+    fontFamily: fontFamily.bold,
+    fontSize: responsiveFontSize(1.2),
+    textAlign: 'center',
+    width: responsiveWidth(26),
+    padding: 0,
+    margin: 0,
+  },
+  roow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
 });

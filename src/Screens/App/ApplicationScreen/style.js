@@ -132,9 +132,9 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: fontFamily.bold,
     fontSize: responsiveFontSize(1.3),
-    borderTopWidth: responsiveWidth(0.3),
-    borderColor: colors.lightsilver,
-    paddingTop: responsiveHeight(1.5),
+    // borderTopWidth: responsiveWidth(0.3),
+    // borderColor: colors.lightsilver,
+    // paddingTop: responsiveHeight(1.5),
     marginVertical: responsiveHeight(2.5),
   },
 });

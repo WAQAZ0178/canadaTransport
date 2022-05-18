@@ -16,11 +16,16 @@ import {
 } from 'react-native-responsive-dimensions';
 import {Icon} from 'react-native-elements';
 import {colors, fontFamily} from '../../../Services';
-import {DateSelect, DateSelect1} from '../../../Components/dateTimePicker';
+import {
+  DateSelect,
+  DateSelect1,
+  DateSelect2,
+} from '../../../Components/dateTimePicker';
 const ApplicationScreen = props => {
   const [check, setCheck] = useState(false);
   const [date, setDate] = useState('26-03-22');
   const [date1, setDate1] = useState('26-03-22');
+  const [date2, setDate2] = useState('26-03-22');
   const [language, setlanguage] = useState([
     {
       title: 'English',
@@ -186,7 +191,7 @@ const ApplicationScreen = props => {
                         item.flag = false;
                         arr[index].flag = true;
                       });
-                      setData(arr);
+                      setlanguage(arr);
                     }}
                     style={styles.rowViewF}>
                     <Icon
@@ -342,6 +347,43 @@ const ApplicationScreen = props => {
             // alignItems: 'center',
             justifyContent: 'space-between',
           }}>
+          <View
+            style={{
+              marginLeft: responsiveWidth(0.5),
+              width: responsiveWidth(26),
+              borderBottomWidth: responsiveWidth(0.3),
+              borderColor: colors.lighttexts,
+            }}
+          />
+          <View
+            style={{
+              // marginLeft: responsiveWidth(7),
+              marginTop: responsiveHeight(4),
+            }}>
+            <DateSelect2
+              getDate={date => {
+                setDate2(date);
+              }}
+              value={date2}
+              datePickerStyle={{width: responsiveWidth(26)}}
+            />
+          </View>
+          <View
+            style={{
+              marginLeft: responsiveWidth(0.5),
+              width: responsiveWidth(26),
+              borderBottomWidth: responsiveWidth(0.3),
+              borderColor: colors.lighttexts,
+            }}
+          />
+          <View />
+        </View>
+        <View
+          style={{
+            flexDirection: 'row',
+            // alignItems: 'center',
+            justifyContent: 'space-between',
+          }}>
           <Text style={styles.bottmTwext}>Location</Text>
           <Text style={styles.bottmTwext}>Date (dd-mm-yyyy)</Text>
           <Text style={styles.bottmTwext}>Signature of applicant</Text>
@@ -361,6 +403,43 @@ const ApplicationScreen = props => {
             // alignItems: 'center',
             justifyContent: 'space-between',
           }}>
+          <View
+            style={{
+              marginLeft: responsiveWidth(0.5),
+              width: responsiveWidth(26),
+              borderBottomWidth: responsiveWidth(0.3),
+              borderColor: colors.lighttexts,
+            }}
+          />
+          <View
+            style={{
+              // marginLeft: responsiveWidth(7),
+              marginTop: responsiveHeight(4),
+            }}>
+            <DateSelect2
+              getDate={date => {
+                setDate1(date);
+              }}
+              value={date1}
+              datePickerStyle={{width: responsiveWidth(26)}}
+            />
+          </View>
+          <View
+            style={{
+              marginLeft: responsiveWidth(0.5),
+              width: responsiveWidth(26),
+              borderBottomWidth: responsiveWidth(0.3),
+              borderColor: colors.lighttexts,
+            }}
+          />
+          <View />
+        </View>
+        <View
+          style={{
+            flexDirection: 'row',
+            // alignItems: 'center',
+            justifyContent: 'space-between',
+          }}>
           <Text style={styles.bottmTwext}>Location</Text>
           <Text style={styles.bottmTwext}>Date (dd-mm-yyyy)</Text>
           <Text style={styles.bottmTwext}>Signature of applicant</Text>
@@ -370,6 +449,9 @@ const ApplicationScreen = props => {
         title={'82-0546E (1803-07)'}
         subtitle={'PROTECTED "A" WHEN COMPLETED'}
         text={'Page 1 of 2'}
+        continuePress={() => {
+          props.navigation.navigate('FarmD2');
+        }}
       />
     </ScrollView>
   );

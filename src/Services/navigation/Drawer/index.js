@@ -13,13 +13,6 @@ import {
   responsiveFontSize,
 } from 'react-native-responsive-dimensions';
 import {appImages, colors, fontFamily} from '../../utilities';
-// import {appImages} from '../../globals/utilities/assets';
-// import {colors} from '../../globals/utilities/colors';
-// import {fontFamily} from '../../globals/utilities/fonts';
-// import {logout} from '../../Backend/auth';
-// import AsyncStorage from '@react-native-async-storage/async-storage';
-// import {getData} from '../../Backend/utility';
-// import {getCurrentUserId} from '../../Backend/auth';
 const CustomDrawer = props => {
   return (
     <View style={styles.container}>

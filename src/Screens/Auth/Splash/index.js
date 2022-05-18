@@ -44,7 +44,7 @@ const Splash = props => {
           alignSelf: 'center',
           borderRadius: responsiveWidth(3),
           position: 'absolute',
-          bottom: responsiveHeight(5),
+          bottom: responsiveHeight(15),
         }}>
         <Text
           style={{

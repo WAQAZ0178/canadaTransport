@@ -51,16 +51,9 @@ export const MyHeader = props => {
             resizeMode: 'contain',
           }}
         />
-        <TouchableOpacity>
-          <Image
-            source={appImages.h2}
-            style={{
-              height: responsiveFontSize(3),
-              width: responsiveFontSize(3),
-              resizeMode: 'contain',
-            }}
-          />
-        </TouchableOpacity>
+        <View
+          style={{height: responsiveFontSize(3), width: responsiveFontSize(3)}}
+        />
       </View>
       <Text
         style={{

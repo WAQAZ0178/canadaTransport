@@ -16,11 +16,16 @@ import {
 } from 'react-native-responsive-dimensions';
 import {Icon} from 'react-native-elements';
 import {colors, fontFamily} from '../../../Services';
-import {DateSelect, DateSelect1} from '../../../Components/dateTimePicker';
+import {
+  DateSelect,
+  DateSelect1,
+  DateSelect2,
+} from '../../../Components/dateTimePicker';
 const Home = props => {
   const [check, setCheck] = useState(false);
   const [date, setDate] = useState('26-03-22');
   const [date1, setDate1] = useState('26-03-22');
+  const [submissionDate, setSubmissionDate] = useState('');
   const [data, setData] = useState([
     {
       title: 'Master in command of the vessel',
@@ -344,7 +349,7 @@ const Home = props => {
           </View>
         </View>
       </View>
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+      <View style={{flexDirection: 'row'}}>
         <View
           style={{
             height: responsiveWidth(0.3),
@@ -356,13 +361,16 @@ const Home = props => {
         />
         <View
           style={{
-            height: responsiveWidth(0.3),
-            backgroundColor: colors.lightsilver,
-            width: responsiveWidth(32),
-            marginTop: responsiveHeight(6),
-            marginLeft: responsiveWidth(10),
-          }}
-        />
+            marginLeft: responsiveWidth(8),
+            marginTop: responsiveHeight(4),
+          }}>
+          <DateSelect2
+            getDate={date => {
+              setSubmissionDate(date);
+            }}
+            value={submissionDate}
+          />
+        </View>
       </View>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <View
@@ -404,7 +412,12 @@ const Home = props => {
           progression.
         </Text>
       </Text>
-      <MyFooter title={'82-0546E (1803-07)'} />
+      <MyFooter
+        title={'82-0546E (1803-07)'}
+        continuePress={() => {
+          props.navigation.navigate('SeaService');
+        }}
+      />
     </ScrollView>
   );
 };

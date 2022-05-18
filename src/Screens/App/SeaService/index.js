@@ -16,11 +16,16 @@ import {
 } from 'react-native-responsive-dimensions';
 import {Icon} from 'react-native-elements';
 import {colors, fontFamily} from '../../../Services';
-import {DateSelect, DateSelect1} from '../../../Components/dateTimePicker';
+import {
+  DateSelect,
+  DateSelect1,
+  DateSelect2,
+} from '../../../Components/dateTimePicker';
 const SeaService = props => {
   const [check, setCheck] = useState(false);
   const [date, setDate] = useState('26-03-22');
   const [date1, setDate1] = useState('26-03-22');
+  const [submissionDate, setSubmissionDate] = useState('');
   const [data, setData] = useState([
     {
       title: 'Master in command of the vessel',
@@ -148,7 +153,7 @@ const SeaService = props => {
                 ],
               ]}>
               {'\u2022'}{' '}
-              {'\tDeck Department \n\t\tA, B, C, D, G, H, I, J, K, L, M'}
+              {'\tDeck Department \n\tA, B, C, D, G, H, I, J, K, L, M'}
             </Text>
             <Text
               style={[
@@ -162,7 +167,7 @@ const SeaService = props => {
                 ],
               ]}>
               {'\u2022'}{' '}
-              {'\tEngine Department \n\t\tA, B, C, D, E, F, I, J, K, L, M'}
+              {'\tEngine Department \n\tA, B, C, D, E, F, I, J, K, L, M'}
             </Text>
           </View>
           <Text
@@ -184,256 +189,163 @@ const SeaService = props => {
       <View style={{height: responsiveHeight(2)}} />
       <View style={styles.card}>
         <View style={styles.cardL}>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
+          <View style={styles.roow}>
             <Text style={styles.headings1}>Rank or Rating </Text>
             <Text style={[styles.headings1, {width: responsiveWidth(34)}]}>
               Vessel / School / Workhop{' '}
             </Text>
             <Text style={styles.headings1}>Official number </Text>
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
+          <View style={styles.roow}>
             <Text style={styles.headings1}>A </Text>
             <Text style={styles.headings1}>B </Text>
             <Text style={styles.headings1}>c </Text>
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <Text style={styles.headings2}>Rank or Rating </Text>
-            <Text style={[styles.headings2, {width: responsiveWidth(34)}]}>
-              Vessel / School / Workhop{' '}
-            </Text>
-            <Text style={styles.headings2}>Official number </Text>
+          <View style={styles.roow}>
+            <TextInput placeholder="Rank or Rating" style={styles.inputss} />
+            <TextInput
+              placeholder="Vessel / School / Workhop"
+              style={[styles.inputss, {width: responsiveWidth(34)}]}
+            />
+            <TextInput placeholder="Official number" style={styles.inputss} />
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <Text style={styles.headings2}>Rank or Rating </Text>
-            <Text style={[styles.headings2, {width: responsiveWidth(34)}]}>
-              Vessel / School / Workhop{' '}
-            </Text>
-            <Text style={styles.headings2}>Official number </Text>
+          <View style={styles.roow}>
+            <TextInput placeholder="Rank or Rating" style={styles.inputss} />
+            <TextInput
+              placeholder="Vessel / School / Workhop"
+              style={[styles.inputss, {width: responsiveWidth(34)}]}
+            />
+            <TextInput placeholder="Official number" style={styles.inputss} />
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <Text style={styles.headings2}>Rank or Rating </Text>
-            <Text style={[styles.headings2, {width: responsiveWidth(34)}]}>
-              Vessel / School / Workhop{' '}
-            </Text>
-            <Text style={styles.headings2}>Official number </Text>
+          <View style={styles.roow}>
+            <TextInput placeholder="Rank or Rating" style={styles.inputss} />
+            <TextInput
+              placeholder="Vessel / School / Workhop"
+              style={[styles.inputss, {width: responsiveWidth(34)}]}
+            />
+            <TextInput placeholder="Official number" style={styles.inputss} />
           </View>
         </View>
         <View style={{height: responsiveHeight(2)}} />
         <View style={styles.cardL}>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
+          <View style={styles.roow}>
             <Text style={styles.headings1}>Type of vessel </Text>
             <Text style={[styles.headings1, {width: responsiveWidth(34)}]}>
               Main Engine Power (KW)
             </Text>
             <Text style={styles.headings1}>Propulsion moteur/vapeur </Text>
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
+          <View style={styles.roow}>
             <Text style={styles.headings1}>D </Text>
             <Text style={styles.headings1}>E </Text>
             <Text style={styles.headings1}>F </Text>
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <Text style={styles.headings2}>Type of vessel </Text>
-            <Text style={[styles.headings2, {width: responsiveWidth(34)}]}>
-              Main Engine Power (KW)
-            </Text>
-            <Text style={styles.headings2}>Propulsion </Text>
+          <View style={styles.roow}>
+            <TextInput placeholder="Type of vessel" style={styles.inputss} />
+            <TextInput
+              placeholder="Main Engine Power (KW)"
+              style={[styles.inputss, {width: responsiveWidth(34)}]}
+            />
+            <TextInput placeholder="Propulsion" style={styles.inputss} />
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <Text style={styles.headings2}>Type of vessel </Text>
-            <Text style={[styles.headings2, {width: responsiveWidth(34)}]}>
-              Main Engine Power (KW)
-            </Text>
-            <Text style={styles.headings2}>Propulsion </Text>
+          <View style={styles.roow}>
+            <TextInput placeholder="Type of vessel" style={styles.inputss} />
+            <TextInput
+              placeholder="Main Engine Power (KW)"
+              style={[styles.inputss, {width: responsiveWidth(34)}]}
+            />
+            <TextInput placeholder="Propulsion" style={styles.inputss} />
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <Text style={styles.headings2}>Type of vessel </Text>
-            <Text style={[styles.headings2, {width: responsiveWidth(34)}]}>
-              Main Engine Power (KW)
-            </Text>
-            <Text style={styles.headings2}>Propulsion </Text>
+          <View style={styles.roow}>
+            <TextInput placeholder="Type of vessel" style={styles.inputss} />
+            <TextInput
+              placeholder="Main Engine Power (KW)"
+              style={[styles.inputss, {width: responsiveWidth(34)}]}
+            />
+            <TextInput placeholder="Propulsion" style={styles.inputss} />
           </View>
         </View>
         <View style={{height: responsiveHeight(2)}} />
         <View style={styles.cardL}>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
+          <View style={styles.roow}>
             <Text style={styles.headings1}>Gross tonnage </Text>
             <Text style={[styles.headings1, {width: responsiveWidth(34)}]}>
               Class of voyage
             </Text>
             <Text style={styles.headings1}>Port of Registry</Text>
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
+          <View style={styles.roow}>
             <Text style={styles.headings1}>G </Text>
             <Text style={styles.headings1}>H </Text>
             <Text style={styles.headings1}>I </Text>
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <Text style={styles.headings2}>Gross tonnage </Text>
-            <Text style={[styles.headings2, {width: responsiveWidth(34)}]}>
-              Class of voyage
-            </Text>
-            <Text style={styles.headings2}>Port of Registry </Text>
+          <View style={styles.roow}>
+            <TextInput placeholder="Gross tonnage" style={styles.inputss} />
+            <TextInput
+              placeholder="Class of voyage"
+              style={[styles.inputss, {width: responsiveWidth(34)}]}
+            />
+            <TextInput placeholder="Port of Registry" style={styles.inputss} />
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <Text style={styles.headings2}>Gross tonnage </Text>
-            <Text style={[styles.headings2, {width: responsiveWidth(34)}]}>
-              Class of voyage
-            </Text>
-            <Text style={styles.headings2}>Port of Registry </Text>
+          <View style={styles.roow}>
+            <TextInput placeholder="Gross tonnage" style={styles.inputss} />
+            <TextInput
+              placeholder="Class of voyage"
+              style={[styles.inputss, {width: responsiveWidth(34)}]}
+            />
+            <TextInput placeholder="Port of Registry" style={styles.inputss} />
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <Text style={styles.headings2}>Gross tonnage</Text>
-            <Text style={[styles.headings2, {width: responsiveWidth(34)}]}>
-              Class of voyage
-            </Text>
-            <Text style={styles.headings2}>Port of Registry </Text>
+          <View style={styles.roow}>
+            <TextInput placeholder="Gross tonnage" style={styles.inputss} />
+            <TextInput
+              placeholder="Class of voyage"
+              style={[styles.inputss, {width: responsiveWidth(34)}]}
+            />
+            <TextInput placeholder="Port of Registry" style={styles.inputss} />
           </View>
         </View>
         <View style={{height: responsiveHeight(2)}} />
         <View style={styles.cardL}>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
+          <View style={styles.roow}>
             <Text style={styles.headings1}>8 or 12 hours/day </Text>
             <Text style={[styles.headings1, {width: responsiveWidth(34)}]}>
               Date of engagement
             </Text>
             <Text style={styles.headings1}>Date of Discharge </Text>
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
+          <View style={styles.roow}>
             <Text style={styles.headings1}>J </Text>
             <Text style={styles.headings1}>K </Text>
             <Text style={styles.headings1}>L </Text>
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <Text style={styles.headings2}>8 or 12 hours/day </Text>
-            <Text style={[styles.headings2, {width: responsiveWidth(34)}]}>
-              Date of engagement
-            </Text>
-            <Text style={styles.headings2}>Date of Discharge </Text>
+          <View style={styles.roow}>
+            <TextInput placeholder="8 or 12 hours/day" style={styles.inputss} />
+            <TextInput
+              placeholder="Date of engagement"
+              style={[styles.inputss, {width: responsiveWidth(34)}]}
+            />
+            <TextInput placeholder="Date of Discharge" style={styles.inputss} />
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <Text style={styles.headings2}>8 or 12 hours/day</Text>
-            <Text style={[styles.headings2, {width: responsiveWidth(34)}]}>
-              Date of engagement
-            </Text>
-            <Text style={styles.headings2}>Date of Discharge </Text>
+          <View style={styles.roow}>
+            <TextInput placeholder="8 or 12 hours/day" style={styles.inputss} />
+            <TextInput
+              placeholder="Date of engagement"
+              style={[styles.inputss, {width: responsiveWidth(34)}]}
+            />
+            <TextInput placeholder="Date of Discharge" style={styles.inputss} />
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <Text style={styles.headings2}>8 or 12 hours/day </Text>
-            <Text style={[styles.headings2, {width: responsiveWidth(34)}]}>
-              Date of engagement
-            </Text>
-            <Text style={styles.headings2}>Date of Discharge </Text>
+          <View style={styles.roow}>
+            <TextInput placeholder="8 or 12 hours/day" style={styles.inputss} />
+            <TextInput
+              placeholder="Date of engagement"
+              style={[styles.inputss, {width: responsiveWidth(34)}]}
+            />
+            <TextInput placeholder="Date of Discharge" style={styles.inputss} />
           </View>
         </View>
         <View style={{height: responsiveHeight(2)}} />
         <View style={styles.cardL}>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
+          <View style={styles.roow}>
             <Text style={styles.headings1}>Days at sea </Text>
             <Text style={[styles.headings1, {width: responsiveWidth(34)}]}>
               For official use Final Rate
@@ -442,51 +354,43 @@ const SeaService = props => {
               For official use Qualifying service{' '}
             </Text>
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
+          <View style={styles.roow}>
             <Text style={styles.headings1}>M </Text>
             <Text style={styles.headings1}>{''} </Text>
             <Text style={styles.headings1}>{''} </Text>
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <Text style={styles.headings2}>Days at sea </Text>
-            <Text style={[styles.headings2, {width: responsiveWidth(34)}]}>
-              Final Rate
-            </Text>
-            <Text style={styles.headings2}>Qualifying service </Text>
+          <View style={styles.roow}>
+            <TextInput placeholder="Days at sea" style={styles.inputss} />
+            <TextInput
+              placeholder="Final Rate"
+              style={[styles.inputss, {width: responsiveWidth(34)}]}
+            />
+            <TextInput
+              placeholder="Qualifying service"
+              style={styles.inputss}
+            />
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <Text style={styles.headings2}>Days at sea </Text>
-            <Text style={[styles.headings2, {width: responsiveWidth(34)}]}>
-              Final Rate
-            </Text>
-            <Text style={styles.headings2}>Qualifying service </Text>
+          <View style={styles.roow}>
+            <TextInput placeholder="Days at sea" style={styles.inputss} />
+            <TextInput
+              placeholder="Final Rate"
+              style={[styles.inputss, {width: responsiveWidth(34)}]}
+            />
+            <TextInput
+              placeholder="Qualifying service"
+              style={styles.inputss}
+            />
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}>
-            <Text style={styles.headings2}>Days at sea </Text>
-            <Text style={[styles.headings2, {width: responsiveWidth(34)}]}>
-              Final Rate
-            </Text>
-            <Text style={styles.headings2}>Qualifying service </Text>
+          <View style={styles.roow}>
+            <TextInput placeholder="Days at sea" style={styles.inputss} />
+            <TextInput
+              placeholder="Final Rate"
+              style={[styles.inputss, {width: responsiveWidth(34)}]}
+            />
+            <TextInput
+              placeholder="Qualifying service"
+              style={styles.inputss}
+            />
           </View>
         </View>
         <View style={{height: responsiveHeight(2)}} />
@@ -510,13 +414,17 @@ const SeaService = props => {
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <View
           style={{
-            height: responsiveWidth(0.3),
-            backgroundColor: colors.lightsilver,
-            width: responsiveWidth(35),
-            marginTop: responsiveHeight(6),
-            marginLeft: responsiveWidth(8),
-          }}
-        />
+            marginLeft: responsiveWidth(7),
+            marginTop: responsiveHeight(4),
+          }}>
+          <DateSelect2
+            getDate={date => {
+              setSubmissionDate(date);
+            }}
+            value={submissionDate}
+            datePickerStyle={{width: responsiveWidth(35)}}
+          />
+        </View>
         <View
           style={{
             height: responsiveWidth(0.3),
@@ -561,13 +469,17 @@ const SeaService = props => {
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <View
           style={{
-            height: responsiveWidth(0.3),
-            backgroundColor: colors.lightsilver,
-            width: responsiveWidth(35),
-            marginTop: responsiveHeight(6),
-            marginLeft: responsiveWidth(8),
-          }}
-        />
+            marginLeft: responsiveWidth(7),
+            marginTop: responsiveHeight(4),
+          }}>
+          <DateSelect2
+            getDate={date => {
+              setDate(date);
+            }}
+            value={date}
+            datePickerStyle={{width: responsiveWidth(35)}}
+          />
+        </View>
         <View
           style={{
             height: responsiveWidth(0.3),
@@ -637,6 +549,9 @@ const SeaService = props => {
       <MyFooter
         title={'82-0546E (1803-07)'}
         subtitle={'PROTECTED "A" WHEN COMPLETED'}
+        continuePress={() => {
+          props.navigation.navigate('Steering');
+        }}
       />
     </ScrollView>
   );
